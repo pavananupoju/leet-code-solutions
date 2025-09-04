@@ -4,7 +4,7 @@ class Solution {
 
         int st =0 ;
         int en = nums.length-1 ; 
-        int ans =target;
+       
 
       
         while(st<=en) 
@@ -14,6 +14,10 @@ class Solution {
             {
                 return mid;
 
+            }
+            if (nums[st] == nums[mid] && nums[mid] == nums[en]) {
+                st++;
+                en--;
             }
             else if(nums[mid]>=nums[st]) 
             {
