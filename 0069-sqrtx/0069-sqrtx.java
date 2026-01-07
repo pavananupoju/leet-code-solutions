@@ -12,7 +12,7 @@ class Solution {
 
          while(low<=high) 
          {
-            int mid = ( low + high )/2 ;
+            int mid = low + (high - low) / 2 ;
             if((long)mid*mid <=x ) 
             {
                ans= mid ; 
@@ -25,7 +25,7 @@ class Solution {
             }
 
          }
-         return ans ;
+         return high ;
         
     }
 }
