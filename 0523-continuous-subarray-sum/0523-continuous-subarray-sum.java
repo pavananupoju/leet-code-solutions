@@ -19,7 +19,7 @@ class Solution {
 
              if(mp.containsKey(rem)) 
              {
-                if(i- mp.get(rem) +1 >1) 
+                if(i- mp.get(rem)  >1) 
                 {
                     return true;
                 }
