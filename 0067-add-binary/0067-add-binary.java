@@ -10,7 +10,8 @@ class Solution {
             int sum = carry;
 
             if (i >= 0) {
-                sum += a.charAt(i--) - '0';
+                sum += a.charAt(i) - '0';
+                i--;
             }
 
             if (j >= 0) {
