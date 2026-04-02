@@ -4,7 +4,7 @@ class Solution {
         int st =0 ;
         int en =  nums.length-1;
 
-        while(st<=en) 
+        while(st<en) 
         {
             int mid =  (st+en)/2 ; 
 
