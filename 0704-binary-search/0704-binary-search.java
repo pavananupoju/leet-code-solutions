@@ -2,7 +2,7 @@ class Solution {
     public int search(int[] nums, int target) { 
 
         int st =0 ;
-        int en =  nums.length;
+        int en =  nums.length-1;
 
         while(st<=en) 
         {
