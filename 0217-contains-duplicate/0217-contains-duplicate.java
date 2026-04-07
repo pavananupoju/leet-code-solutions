@@ -6,12 +6,13 @@ class Solution {
         {  
 
             int a = nums[i];
-             mp.put(a,mp.getOrDefault(a,0)+1);
-            if(mp.get(a)>1) 
-            {
-                return true;
-            }
 
+            if(mp.containsKey(a)) 
+            {
+                  return true;
+            }
+             mp.put(a,mp.getOrDefault(a,0)+1);
+           
            
         }
         return false;
