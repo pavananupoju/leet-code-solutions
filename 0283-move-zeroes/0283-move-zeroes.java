@@ -12,11 +12,11 @@ class Solution {
             }
         }
        
-       for(int i=p;i<nums.length;i++) 
-       {
-        nums[i]=0;
-       }
-
+      while(p<nums.length) 
+      {
+        nums[p]=0 ;
+        p++;
+      }
       
         
     }
