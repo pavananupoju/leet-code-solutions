@@ -15,7 +15,8 @@ class Solution {
             char ch_2 = t.charAt(i);
             
 
-            if(h_1.containsKey(ch_1)) 
+            if(h_1.containsKey(ch_1))          
+
             {
                 if(h_1.get(ch_1)!=ch_2) 
                 {
