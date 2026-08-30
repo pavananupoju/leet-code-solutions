@@ -34,10 +34,20 @@ class Solution {
                 i++;
 
             }
-        }
+            }
+            return logic(s, i, num , sign);
+        
+    }
 
-        while(i<s.length() && isint(s.charAt(i)) ) 
-        {   
+        public int logic(String s  , int i , int num , int sign) 
+        {    
+
+          if (i == s.length() || !isint(s.charAt(i))) {
+            return sign * num;
+        }
+         
+
+
                 int a =  s.charAt(i) - '0';
 
                 if(num>(Integer.MAX_VALUE - a)/10 ) 
@@ -45,13 +55,10 @@ class Solution {
                     return sign == 1 ?Integer.MAX_VALUE : Integer.MIN_VALUE;
                 }
                 num =  num*10 + a ; 
-                i++;
-               
-
+    
+        return logic(s, i+1 , num, sign);
         }
-        return sign*num;
 
 
-
-    }
+    
 }
