@@ -7,12 +7,22 @@ public double pow(double x , long n)
         return 1.0;
     } 
 
+
+    /* in recursion when the base case is true it will brak the recursive calls and again it back track each and every recursive call       
+    
+  half is very simila
+    
+    half is to store the result of the smaller recursive problem, so we can reuse it instead of calculating the same power twice.
+    */
+
+
+ double half =  pow(x, n/2);
     if(n%2==0) 
     {
-        return pow(x*x , n/2);
+        return half*half;
     }
   
-        return x* pow(x , n-1);
+        return x* half*half;
     
 }
 
