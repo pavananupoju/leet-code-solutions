@@ -1,32 +1,31 @@
 class Solution {
 
-
-    public double power(double x , long n) 
+public double pow(double x , long n) 
+{
+    if(n==0) 
     {
-        if(n==0) 
-        {
-            return 1.0 ;
-        }
-        if(n==1) 
-        {
-           return x;
-        } 
+        return 1.0;
+    } 
 
-        if(n%2==0) 
-        {
-            return power(x*x , n/2);
-        }
-       
-       return x* power(x, n-1);
+    if(n%2==0) 
+    {
+        return pow(x*x , n/2);
     }
-    public double myPow(double x, int n) {  
-   long N = n;
-     if(N<0) 
-     {
-         return 1.0 / power(x, -N);
-     }
-     return power(x, N);
-}
+  
+        return x* pow(x , n-1);
+    
 }
 
+    public double myPow(double x, int n) { 
 
+       
+        long a  = n;
+        if(n<0) 
+        {   
+           return 1.0 / pow(x,-a);
+
+        } 
+        return pow(x , a);
+        
+    }
+}
