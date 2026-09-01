@@ -3,55 +3,35 @@ class Solution {
 
         ArrayList<String> ans  =  new ArrayList<>();
 
-        int length =  2*n;
+      
 
         String s = "";  
 
-        generate(s , length, ans);
+        generate(s , 0, 0,n,ans);
        
        return ans;
 
         
     }
-    public void  generate(String s , int length, ArrayList<String>  ans) 
+    public void  generate(String s , int lft , int rgt,int n, ArrayList<String>  ans) 
     {
-        if(s.length()==length) 
+        if(s.length()==2*n) 
         {
-            if(isvalid(s)) 
-            {
+            
                 ans.add(s);
-            }
+            
             return;
         }
-
-        generate(s+ "(" , length,ans);
+          
+          if(lft<n) 
+          {
+        generate(s+ "(" ,lft+1,rgt, n,ans); 
+          }
         
-        generate(s+")" , length,ans);
+        if(rgt<lft)
+        generate(s+")",lft,rgt+1 , n,ans);
 
     }
-
-
-   public boolean isvalid(String s) 
-   {
-       int cnt=0 ;
-      for(char ch : s.toCharArray()) 
-      {
-        if(ch=='(') 
-        {
-            cnt++;
-        }
-        else 
-        {
-            cnt--;
-        }
-        if(cnt<0) 
-        {
-            return false;
-        }
-      }
-
-       return cnt==0;
-   }
 
 
 }   
