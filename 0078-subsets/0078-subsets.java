@@ -17,6 +17,7 @@ class Solution {
         subset.add(nums[index]) ;
         createsub(nums , index+1 , res , subset) ;
         subset.remove(subset.size()-1) ;
-        createsub(nums, index+1, res, subset);
+         createsub(nums , index+1 , res , subset) ;
+       
     }
 }
