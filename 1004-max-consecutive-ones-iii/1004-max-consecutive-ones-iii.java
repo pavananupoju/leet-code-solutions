@@ -9,7 +9,9 @@ class Solution {
             if(nums[i]==0) 
             {
                 zc++;
-            }
+            } 
+
+            /* we need to use sliding window approach , we need to count the zeroes if zeroes is creater than given k value we need to move the st point forward ubntil we found zeroes and satisfy the condition*/
             while(zc>k) 
             {
                 if(nums[st]==0) 
