@@ -1,35 +1,27 @@
 class Solution {
-    public int longestSubstring(String s, int k) { 
-
-       int max=0;  
-       /* coiunt the frequency iof the each char and check the condition if it true take the length of the window */
-
-       for(int i =0 ;i<s.length();i++) 
-       {
-        int freq[]  =  new int[26];
-        for(int j=i;j<s.length();j++) 
+    public int longestSubstring(String s, int k) {
+          
+          if (s.length() < k) {
+            return 0;
+        }
+        int freq[] =  new int[26] ;
+        for(int i=0;i<s.length();i++) 
         {
-            freq[s.charAt(j) - 'a']++;
-
-            boolean fnd =  true;
-
-            for(int x = 0;x<26;x++) 
-            {
-               if(freq[x]<k && freq[x]>0) 
-               {
-                   fnd = false;
-                   break;
-               }
-            }
-            if(fnd) 
-            {
-               max = Math.max(max, j - i + 1);
-
-            }
+            freq[s.charAt(i)- 'a']++;
         }
 
-       }
-       return max;
-
+        for(int i=0;i<s.length();i++) 
+        {
+            char ch  =  s.charAt(i);
+            if(freq[ch - 'a']<k) 
+            {
+                 int lft =  longestSubstring(s.substring(0,i),k);
+                 int rgt = longestSubstring(s.substring(i+1),k);
+                 int max =  Math.max(lft,rgt);
+                 return max;
+            }
+            
+        }
+        return s.length();
     }
 }
