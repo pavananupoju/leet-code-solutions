@@ -1,7 +1,8 @@
 class Solution {
     public int longestSubstring(String s, int k) { 
 
-       int max=0;
+       int max=0;  
+       /* coiunt the frequency iof the each char and check the condition if it true take the length of the window */
 
        for(int i =0 ;i<s.length();i++) 
        {
