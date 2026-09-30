@@ -13,6 +13,9 @@ public double pow(double x , long n)
   half is very simila
     
     half is to store the result of the smaller recursive problem, so we can reuse it instead of calculating the same power twice.
+
+    even = 2^4 = 2^2 * 2^2 -->half * half 
+    odd = 2^5 = 2*2^2*2^2 --> x*hald*half
     */
 
 
