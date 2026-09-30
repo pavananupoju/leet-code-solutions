@@ -1,40 +1,32 @@
 class Solution {
     public List<String> generateParenthesis(int n) {
+        ArrayList<String> ans = new ArrayList<>();
+        String s ="";
+        int len = 2*n;
+        int o =0 ;
+        int c=0;
+        genpra(s,len,ans,o,c,n );
+        return ans;
 
-        ArrayList<String> ans  =  new ArrayList<>();
-
-      
-
-        String s = "";  
-
-        generate(s , 0, 0,n,ans);
-       
-       return ans;
-
-        
     }
-    public void  generate(String s , int lft , int rgt,int n, ArrayList<String>  ans) 
+    public void  genpra(String s , int length ,   ArrayList<String> ans,int o , int c,int n) 
     {
-        if(s.length()==2*n) 
+        if(s.length() == length ) 
         {
-            
+           
                 ans.add(s);
             
-            return;
+            return ;
+        } 
+        if(o<n) 
+        {
+        genpra(s+"(",length,ans,o+1,c,n); 
         }
-          
-          if(lft<n) 
-          {
-        generate(s+ "(" ,lft+1,rgt, n,ans); 
-          }
-        
-        if(rgt<lft)
-        generate(s+")",lft,rgt+1 , n,ans);
-
+        if(c<o) 
+        {
+         genpra(s+")",length,ans,o,c+1,n); 
+        }
     }
-
-
-}   
-
-
- 
+  
+    
+}
