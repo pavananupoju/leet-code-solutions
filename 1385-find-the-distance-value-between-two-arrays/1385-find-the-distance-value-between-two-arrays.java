@@ -11,6 +11,7 @@ class Solution {
                 if(Math.abs(arr1[i]-arr2[j])<=d) 
                 {
                     fnd = true;
+                    break;
                 }
             }
             if(!fnd) 
