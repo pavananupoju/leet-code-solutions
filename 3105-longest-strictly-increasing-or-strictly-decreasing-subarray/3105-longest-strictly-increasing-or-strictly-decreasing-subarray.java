@@ -3,7 +3,7 @@ class Solution {
 
 
         int i =0 ;
-        int max =1 ;
+        int max =1;
         int direction =0;
 
         for(int j=1;j<nums.length;j++) 
