@@ -6,7 +6,10 @@ class Solution {
       boolean alice = true;
       while(stones>=rem) 
 
-    {   
+    {    
+
+        /* for every iteration the person will remove lesser then previous person i.e rem--*/
+        
         stones = stones -rem ;
         rem--;
         alice = !alice;
